@@ -1,0 +1,45 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.SQLOutput;
+
+public class caculatordesignjava {
+    public static void main(String[] args) {
+        JFrame frame=new JFrame("Account");
+        JLabel lb1=new JLabel("Full Name ");
+        JLabel lb2=new JLabel("Result");
+        lb1.setBounds(50,50,100,30);
+        lb2.setBounds(50,100,100,30);
+        frame.add(lb1);frame.add(lb2);
+        JTextField fullname=new JTextField();
+        JTextField result=new JTextField();
+        fullname.setBounds(150,50,150,30);
+        result.setBounds(150,100,150,30);
+        frame.add(fullname);frame.add(result);
+        JButton convert=new JButton("Convert");
+        convert.setBounds(100,150,80,30);
+        frame.add(convert);
+        convert.setBackground(Color.red);
+        convert.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String text = fullname.getText();
+                String[] words = text.split("\\s+");
+                StringBuilder sb = new StringBuilder();
+                for (String word : words) {
+                    if (word.length() > 0) {
+
+                        sb.append(Character.toUpperCase(word.charAt(0))).append(word.substring(1).toLowerCase()).append(" ");
+                    }
+                }
+                result.setText(sb.toString().trim());
+            }
+        });
+        frame.setSize(500,300);
+        frame.setLayout(null);
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
+    }
+}
