@@ -1,0 +1,28 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.SQLOutput;
+//BorderLayout():Tao BL ko co khoang cach giua cac phan
+//BorderLayout(hgap,vgap) Tao BL co khoang cach giua cac phan,hgap quy dinh kc chieu ngang,vgap kc chieu doc
+public class caculatordesignjava {
+    public static void main(String[] args) {
+        JFrame frame=new JFrame("Panel");
+        JButton btn1=new JButton("NORTH");
+            JButton btn2=new JButton("WEST");
+        JButton btn3=new JButton("CENTER");
+        JButton btn4=new JButton("SOUTH");
+        JTextField btn5=new JTextField("EAST");
+        btn5.setBackground(Color.red);
+        frame.setLayout(new BorderLayout());
+        frame.add(btn1,BorderLayout.NORTH);
+        frame.add(btn2,BorderLayout.WEST);
+        frame.add(btn3,BorderLayout.CENTER);
+        frame.add(btn4,BorderLayout.SOUTH);
+        frame.add(btn5,BorderLayout.EAST);
+        frame.setSize(500,500);
+        frame.setLocationRelativeTo(null);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+    }
+}
