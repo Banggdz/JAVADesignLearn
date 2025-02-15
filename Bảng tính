@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 public class caculatordesignjava {
     public static void main(String[] args) {
         JFrame frame=new JFrame("Caculator");
+        //or frame.setTitle("Caculator");
         JLabel lb1=new JLabel("First Number");
         JLabel lb2=new JLabel("Second Number");
         JLabel lb3=new JLabel("Result");
