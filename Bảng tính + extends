@@ -84,3 +84,35 @@ public class caculatordesignjava {
         frame.setVisible(true);
     }
 }
+
+
+
+*/
+public class Caculator extends JFrame {
+    private JLabel lbl1,lbl2,lblResult;
+    private JTextField txt1,txt2,txtResult;
+    private JButton btnClear,btnAdd,btnSub,btnMul,btnDiv;
+    public Caculator(String title){
+        this.setTitle(title);
+        lbl1=new JLabel("First Number");
+        lbl2=new JLabel("Second Number");
+        lblResult=new JLabel("Result");
+        this.add(lbl1);this.add(lbl2);this.add(lblResult);
+        lbl1.setBounds(50,50,100,30);
+        lbl2.setBounds(50,100,100,30);
+        lblResult.setBounds(50,150,100,30);
+        this.setSize(500,500);
+        this.setLayout(null);this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null);;
+        this.setVisible(true);
+    }
+}
+
+public class caculatordesignjava {
+    public static void main(String[] args) {
+        Caculator cal=new Caculator("Caculator");
+
+    }
+}
+
+/*
