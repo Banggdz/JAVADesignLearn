@@ -1,0 +1,37 @@
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.SQLOutput;
+
+//JtextArea(String s) Constructor tạo JTextArea với nội dung là s;
+//JtextArea(int row,int column) Constructor tạo JTextArea với số hàng,cột
+//getText() trả về nd trong text area
+//setText() gán nd cho text area
+//setLineWrap(boolean) auto xuống dòng khi nd bị tràn ở dòng hiện tại nếu tham số là true
+//setWrapStyleWord(boolean) Tự động gói từ khi xuong dong nếu thsố là true
+public class caculatordesignjava {
+    public static void main(String[] args) {
+        JFrame frame=new JFrame("Caculatoreeeeeee");
+        JTextArea jta=new JTextArea();
+        jta.setBounds(50,50,200,100);
+        jta.setLineWrap(true);
+        jta.setWrapStyleWord(true);
+        frame.add(jta);
+        JButton btn=new JButton("Count");
+        btn.setBounds(50,180,80,30);
+        btn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println(jta.getText());
+                String text=jta.getText();
+                System.out.println(text.length());
+            }
+        });
+        frame.setSize(500,300);
+        frame.add(btn);
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
+        frame.setLayout(null);
+    }
+}
