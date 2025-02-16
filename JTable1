@@ -1,0 +1,40 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.SQLOutput;
+//JTable() Tao JTable rong
+//JTable(Objective[][] rows,Objective[] cols) Tao JTable voi nd cu the
+//Khi su dung JTable can dua JTable vao ScrollPane neu khong phan header cua tung cot se ko duoc hien thi
+public class caculatordesignjava {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Panel");
+        Object[][] row={
+                {"SV01","Nguyen Van A","CNTT1",3.2},
+        {"SV02","Nguyen Van A","CNTT1",3.5},
+        {"SV03","Nguyen Van B","CNTT10",3.1},
+        {"SV04","Nguyen Van C","CNTT5",2.9},
+        {"SV05","Nguyen Van AD","CNTT9",3.3},
+        };
+        Object[] col={"ID","Ho Ten","Lop","Gpa"};
+        JTable table=new JTable(row,col);
+        JScrollPane scrollPane=new JScrollPane(table);
+            frame.add(scrollPane);
+            frame.setSize(500, 500);
+            frame.setLocationRelativeTo(null);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setVisible(true);
+        //System.out.println(table.getValueAt(3,1));
+        //table.setValueAt("Nguyen Thi",3,1);
+        
+        //Ho tro sap xep khi an vao dau cot tren bang
+        table.setAutoCreateRowSorter(true);
+            for(int i=0;i<table.getRowCount();i++){
+                for(int j=0;j<table.getColumnCount();j++){
+                    System.out.print(table.getValueAt(i,j)+" ");
+                }
+                System.out.println("");
+            }
+    }
+    }
+
