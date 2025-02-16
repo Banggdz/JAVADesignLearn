@@ -1,0 +1,51 @@
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.SQLOutput;
+import java.util.Vector;
+
+//JTable() Tao JTable rong
+//JTable(Objective[][] rows,Objective[] cols) Tao JTable voi nd cu the
+//Khi su dung JTable can dua JTable vao ScrollPane neu khong phan header cua tung cot se ko duoc hien thi
+//removeRow(int row) xóa 1 hàng
+//getDataVector() trả về vector các vector dữ liệu trên bảng
+//insertRow(int row,Object[],rowData)
+//DefaultTableModel h trợ các thao tác với dữ liệu trên bảng như xóa hàng,thêm hàng ,lấy dữ lieu..
+public class caculatordesignjava {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Panel");
+        Object[][] row={
+                {"SV01","Nguyen Van A","CNTT1",3.2},
+        {"SV02","Nguyen Van B","CNTT1",3.5},
+        {"SV03","Nguyen Van C","CNTT10",3.1},
+        {"SV04","Nguyen Van D","CNTT5",2.9},
+        {"SV05","Nguyen Van E","CNTT9",3.3},
+        };
+        Object[] col={"ID","Ho Ten","Lop","Gpa"};
+        JTable table=new JTable(new DefaultTableModel(row,col));
+        DefaultTableModel model=(DefaultTableModel)table.getModel();
+         Vector<Vector> data=model.getDataVector();
+        for(int i=0;i<data.size();i++){
+            for(int j = 0; j< data.get(i).size(); j++){
+                System.out.print(data.get(i).get(j)+" ");
+            }
+            System.out.println("");
+        }
+        JScrollPane scrollPane=new JScrollPane(table);
+        frame.add(scrollPane);
+        frame.setSize(500,300);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+        model.addRow(new Object[]{"SV06","Nguyen Van F","DTVT1",3.6});
+        Vector<Object>newRow=new Vector<>();
+        newRow.add("SV07");newRow.add("Nguyen Meme");
+        newRow.add("MR2");
+        newRow.add(2.7);
+        model.addRow(newRow);
+        model.removeRow(3);
+    }
+    }
+
