@@ -46,6 +46,8 @@ public class caculatordesignjava {
         newRow.add(2.7);
         model.addRow(newRow);
         model.removeRow(3);
+// an vao o hang tren table de xoa
+        model.removeRow(table.getSelectedRow());
     }
     }
 
